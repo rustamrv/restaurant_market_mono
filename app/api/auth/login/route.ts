@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { prisma } from '../../../lib/prisma'; 
+import { prisma } from '../../../lib/prisma';
 import bcrypt from 'bcryptjs';
 
 export async function POST(req: NextRequest) {
@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     if (!isPasswordCorrect) {
       return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
     }
- 
+
     return NextResponse.json({
       message: 'Login successful',
       user: {

@@ -1,5 +1,6 @@
 'use client';
 
+import { redirect } from 'next/navigation';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -9,22 +10,21 @@ export default function Login() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     const res = await fetch('/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     });
-  
+
     const data = await res.json();
-    
+
     if (res.ok) {
-      alert('Login successful!'); 
+      redirect(`/`);
     } else {
       alert(`Login failed: ${data.error}`);
     }
   };
-  
 
   return (
     <div className="relative mx-auto flex h-[1024px] w-[1440px] items-center justify-center overflow-hidden bg-white">

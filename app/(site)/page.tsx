@@ -1,62 +1,17 @@
-import Image from 'next/image';
+import HeroSection from '../components/HeroSection';
+import WelcomeSection from '../components/WelcomeSection';
+import PopularMenuSection from '../components/PopularMenuSection';
+import ReserveTableSection from '../components/ReserveTableSection';
+import ChefSection from '../components/ChefSection';
 
 export default function Home() {
   return (
-    <div className="mt-20 grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 font-[family-name:var(--font-geist-sans)] sm:px-20">
-      <div className="flex flex-row items-center justify-center">
-        <div className="flex w-1/2 flex-col">
-          <button className="flex h-[40px] w-[150px] items-center justify-center rounded-full bg-[#FFE0B3] px-4 py-1 text-sm text-[#FF8A00] transition hover:bg-[#FFD699]">
-            Restaurant
-          </button>
-
-          <h1 className="mt-4 text-4xl font-bold">Italian Cuisine</h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales senectus dictum arcu
-            sit tristique donec eget.
-          </p>
-          <div className="mt-6 flex flex-row items-center gap-3">
-            <button className="mt-6 rounded-full bg-[#FF8A00] px-6 py-3 text-sm text-white transition hover:bg-[#FF7A00]">
-              Order Now
-            </button>
-            <button className="mt-6 rounded-full bg-[#3FA72F] px-6 py-3 text-sm text-white transition">
-              Reservation
-            </button>
-          </div>
-        </div>
-        <div className="mt-72 w-1/2">
-          <Image
-            src="/images/Illustration.png"
-            alt="Illustration"
-            width={600}
-            height={500}
-            className="mx-auto object-contain"
-          />
-        </div>
-      </div>
-
-      <div className="mt-72 flex w-full items-center justify-center rounded bg-[rgba(63,198,110,0.37)]">
-        <div className="mt-16 w-1/2">
-          <Image
-            src="/images/salad.png"
-            alt="salad"
-            width={600}
-            height={500}
-            className="mx-auto object-contain"
-          />
-        </div>
-        <div className="flex w-1/2 flex-col">
-          <h1 className="mt-4 text-4xl font-bold">Welcome to delizioso</h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales senectus dictum arcu
-            sit tristique donec eget.
-          </p>
-          <div className="mt-6 flex flex-row items-center gap-3">
-            <button className="mt-6 rounded-full bg-[#FF8A00] px-6 py-3 text-sm text-white transition hover:bg-[#FF7A00]">
-              See our menu
-            </button>
-          </div>
-        </div>
-      </div>
+    <div className="flex flex-col gap-[74px] px-8 py-20 sm:px-20">
+      <HeroSection />
+      <WelcomeSection />
+      <PopularMenuSection />
+      <ReserveTableSection />
+      <ChefSection />
     </div>
   );
 }

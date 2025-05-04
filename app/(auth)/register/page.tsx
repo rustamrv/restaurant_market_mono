@@ -10,7 +10,7 @@ export default function Register() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     const res = await fetch('/api/auth/register', {
       method: 'POST',
       headers: {
@@ -18,17 +18,16 @@ export default function Register() {
       },
       body: JSON.stringify({ email, password, fullName }),
     });
-  
+
     const data = await res.json();
     console.log('Server response:', data);
-  
+
     if (res.ok) {
-      alert('Registration successful!'); 
+      alert('Registration successful!');
     } else {
       alert(`Error: ${data.error}`);
     }
   };
-  
 
   return (
     <div className="relative mx-auto flex h-[1024px] w-[1440px] items-center justify-center overflow-hidden bg-white">
@@ -43,7 +42,7 @@ export default function Register() {
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-          <input
+            <input
               type="text"
               placeholder="Full name"
               value={fullName}
@@ -84,7 +83,7 @@ export default function Register() {
             </button>
           </form>
         </div>
- 
+
         <div className="relative flex h-[500px] w-1/2 items-center justify-center">
           <div className="absolute z-0 h-[500px] w-[500px] rounded-full"></div>
           <Image
