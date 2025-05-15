@@ -3,6 +3,9 @@ import WelcomeSection from '../components/WelcomeSection';
 import PopularMenuSection from '../components/PopularMenuSection';
 import ReserveTableSection from '../components/ReserveTableSection';
 import ChefSection from '../components/ChefSection';
+import TestimonialSection from '../components/TestimonialSection';
+import WorkingTimeSection from '../components/WorkingTimeSection';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -12,6 +15,9 @@ export default function Home() {
       <PopularMenuSection />
       <ReserveTableSection />
       <ChefSection />
+      <TestimonialSection />
+      <WorkingTimeSection />
+      <Footer />
     </div>
   );
 }

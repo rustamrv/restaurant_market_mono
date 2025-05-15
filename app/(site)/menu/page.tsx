@@ -1,7 +1,18 @@
+import { Suspense, lazy } from 'react';
+import Footer from '../../components/Footer';
+
+const LazyPopularMenuSection = lazy(() => import('../../components/PopularMenuSection'));
+
 export default function Menu() {
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
-      rt3esf
-    </div>
+    <main className="flex flex-col gap-[74px] px-8 py-20 sm:px-20">
+      <div className="px-8 sm:px-20">
+        <Suspense fallback={<div>Loading...</div>}>
+          <LazyPopularMenuSection title="Main menu" />
+        </Suspense>
+      </div>
+      <Footer />
+    </main>
   );
 }
+
